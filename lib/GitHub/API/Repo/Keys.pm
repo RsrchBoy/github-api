@@ -3,7 +3,6 @@ package GitHub::API::Repo::Keys;
 # ABSTRACT: A list of a repository's hooks
 
 use common::sense;
-use autobox::JSON;
 use autobox::Core;
 
 use parent 'GitHub::API::Base';
@@ -30,6 +29,10 @@ sub all {
 
 Adds a public key to the repository as a deploy key.
 
+
+See L<the GitHub API reference|http://developer.github.com/v3/repos/keys/#create>
+for more information.
+
 =cut
 
 sub create {
@@ -43,3 +46,10 @@ sub create {
 }
 
 !!42;
+__END__
+
+=head1 DESCRIPTION
+
+See L<http://developer.github.com/v3/repos/keys/>.
+
+=cut
