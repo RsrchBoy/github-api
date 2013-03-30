@@ -1,4 +1,4 @@
-package GitHub::API::Repo::Hooks;
+package GitHub::API::Repo::Hook;
 
 # ABSTRACT: A list of a repository's hooks
 
@@ -7,15 +7,9 @@ use autobox::JSON;
 
 use parent 'GitHub::API::Base';
 
-#use aliased 'GitHub::API::Hook';
-
 # debugging...
 use Smart::Comments '###';
 
-sub all {
-    my $self = shift @_;
-
-    return $self->{_hooks} //= $self->_get;
-}
+sub test { ... }
 
 !!42;

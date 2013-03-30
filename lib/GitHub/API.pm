@@ -62,7 +62,7 @@ __END__
 
 =head1 DESCRIPTION
 
-B<WARNING: THIS IS INCOMPLETE AND MAY EAT YOUR REPOSITORIES!>
+B<WARNING: THIS IS INCOMPLETE AND WILL EAT YOUR REPOSITORIES!>
 
 This is a very small interface to the GitHub v3 API, designed to do simple
 things quickly, and with a minimum of fuss.
