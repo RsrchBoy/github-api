@@ -1,0 +1,68 @@
+NAME
+    GitHub::API - An itty-bitty interface to the GitHub API
+
+VERSION
+    This document describes version 0.000000_02 of GitHub::API - released
+    March 30, 2013 as part of GitHub-API.
+
+SYNOPSIS
+        # tiny little chaining interface
+        use GitHub::API;
+        use autobox::JSON;
+
+        say GitHub::API
+            ->new
+            ->user
+            ->repo("moosex-attributeshortcuts")
+            ->hooks
+            ->all
+            ->to_json
+            ;
+
+DESCRIPTION
+    WARNING: THIS IS INCOMPLETE AND WILL EAT YOUR REPOSITORIES!
+
+    This is a very small interface to the GitHub v3 API, designed to do
+    simple things quickly, and with a minimum of fuss.
+
+METHODS
+  new(user => $userid, token => $gh_token)
+    Returns a new instance; requires a valid GitHub user name and OAuth2
+    token. We do not support unauthenticated access.
+
+  user
+    Returns a GitHub::API::User object representing the authenticated user.
+
+  org($org_name)
+    Returns a GitHub::API::Org object representing the named organization.
+
+SEE ALSO
+    Please see those modules/websites for more information related to this
+    module.
+
+    *   Net::GitHub
+
+    *   Pithub
+
+SOURCE
+    The development version is on github at
+    <http://github.com/RsrchBoy/github-api> and may be cloned from
+    <git://github.com/RsrchBoy/github-api.git>
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    https://github.com/RsrchBoy/github-api/issues
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    Chris Weyl <cweyl@alumni.drew.edu>
+
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2013 by Chris Weyl.
+
+    This is free software, licensed under:
+
+      The GNU Lesser General Public License, Version 2.1, February 1999
+
