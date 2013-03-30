@@ -1,6 +1,6 @@
 package GitHub::API::Repo;
 
-# ABSTRACT: A repo
+# ABSTRACT: A repository
 
 use common::sense;
 use parent 'GitHub::API::Base';

@@ -62,6 +62,8 @@ sub org { shift->_next(Org, "/orgs/$_[0]") }
 !!42;
 __END__
 
+=for :stopwords OAuth2 Pithub itty-bitty
+
 =head1 SYNOPSIS
 
     # tiny little chaining interface

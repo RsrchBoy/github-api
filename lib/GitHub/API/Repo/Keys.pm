@@ -28,7 +28,7 @@ sub all {
 
 =method create(...)
 
-Adds a public key to the respository as a deploy key.
+Adds a public key to the repository as a deploy key.
 
 =cut
 
