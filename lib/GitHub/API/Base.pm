@@ -35,7 +35,7 @@ sub _post {
     #### $content
     my $resp = $self
         ->{ua}
-        ->post($url, $content->to_json, { headers => $self->{headers} })
+        ->post($url, { content => $content->to_json, headers => $self->{headers} })
         ;
 
     return $resp->{content}->from_json;
