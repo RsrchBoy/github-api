@@ -6,7 +6,7 @@ use autobox::JSON;
 # ABSTRACT: Base class for GitHub::API classes
 
 # debugging...
-use Smart::Comments '###';
+#use Smart::Comments '###';
 
 sub _get {
     my $self = shift @_;

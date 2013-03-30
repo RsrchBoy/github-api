@@ -7,7 +7,7 @@ use common::sense;
 use aliased 'GitHub::API::Repo';
 
 # debugging...
-use Smart::Comments '###', '####';
+#use Smart::Comments '###', '####';
 
 =method repo($repo_name)
 

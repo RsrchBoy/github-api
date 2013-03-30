@@ -10,7 +10,7 @@ use parent 'GitHub::API::Base';
 #use aliased 'GitHub::API::Hook';
 
 # debugging...
-use Smart::Comments '###';
+#use Smart::Comments '###';
 
 =method all
 

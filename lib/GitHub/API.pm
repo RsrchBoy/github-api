@@ -13,7 +13,7 @@ use aliased 'GitHub::API::User';
 use aliased 'GitHub::API::Org';
 
 # debugging...
-use Smart::Comments '###', '####';
+#use Smart::Comments '###', '####';
 
 =method new(user => $userid, token => $gh_token)
 
