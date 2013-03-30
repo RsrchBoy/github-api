@@ -12,6 +12,13 @@ use parent 'GitHub::API::Base';
 # debugging...
 use Smart::Comments '###';
 
+=method all
+
+Returns all hooks associated with this repository as an array reference of
+hash references.
+
+=cut
+
 sub all {
     my $self = shift @_;
 

@@ -10,6 +10,6 @@ use parent 'GitHub::API::Base';
 # debugging...
 use Smart::Comments '###';
 
-sub test { ... }
+#sub test { ... }
 
 !!42;

@@ -15,6 +15,13 @@ use aliased 'GitHub::API::Org';
 # debugging...
 use Smart::Comments '###', '####';
 
+=method new(user => $userid, token => $gh_token)
+
+Returns a new instance; requires a valid GitHub user name and OAuth2 token.
+We do not support unauthenticated access.
+
+=cut
+
 sub new {
     my ($class, %opts) = @_;
 
@@ -37,8 +44,18 @@ sub new {
     return bless \%opts, $class;
 }
 
+=method user
+
+Returns a L<GitHub::API::User> object representing the authenticated user.
+
+=method org($org_name)
+
+Returns a L<GitHub::API::Org> object representing the named organization.
+
+=cut
+
 sub user  { shift->_next(User, '/user') }
-sub users { ... } # needs a Users class
+#sub users { ... } # needs a Users class
 
 sub org { shift->_next(Org, "/orgs/$_[0]") }
 
