@@ -2,5 +2,8 @@ Revision history for GitHub-API
 
 {{$NEXT}}
 
+0.000000_03  2013-04-07 16:17:08 PDT-0700
+	* add Repo::Keys->rm()
+
 0.000000_02  2013-03-30 13:54:56 PDT-0700
 	* initial release
