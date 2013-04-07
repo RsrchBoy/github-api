@@ -38,12 +38,25 @@ for more information.
 sub create {
     my ($self, %key) = @_;
 
+    delete $self->{_keys};
     my $key = $self->_post(\%key);
-    $self->{_keys}->push($key)
-        if defined $self->{_keys};
 
     return $key;
 }
+
+=method rm($id)
+
+Given a key id, deletes said key from the repository's list of deploy keys.
+
+=cut
+
+sub rm {
+    my ($self, $id) = @_;
+
+    delete $self->{_keys};
+    return $self->_delete(undef, "/$id");
+}
+
 
 !!42;
 __END__

@@ -31,7 +31,7 @@ sub _post {
     my $url = $self->{base_url} . $self->{url};
     $url .= $path_part // q{};
 
-    #### POST to: $url
+    ### POST to: $url
     #### $content
     my $resp = $self
         ->{ua}
@@ -39,6 +39,21 @@ sub _post {
         ;
 
     return $resp->{content}->from_json;
+}
+
+sub _delete {
+    my ($self, $content, $path_part) = @_;
+
+    my $url = $self->{base_url} . $self->{url};
+    $url .= $path_part // q{};
+
+    ### DELETE to: $url
+    my $resp = $self
+        ->{ua}
+        ->delete($url, { headers => $self->{headers} })
+        ;
+
+    return $resp;
 }
 
 sub _next_append {
