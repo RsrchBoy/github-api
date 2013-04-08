@@ -29,7 +29,6 @@ sub all {
 
 Adds a public key to the repository as a deploy key.
 
-
 See L<the GitHub API reference|http://developer.github.com/v3/repos/keys/#create>
 for more information.
 
@@ -48,6 +47,9 @@ sub create {
 
 Given a key id, deletes said key from the repository's list of deploy keys.
 
+See L<the GitHub API reference|http://developer.github.com/v3/repos/keys/#delete>
+for more information.
+
 =cut
 
 sub rm {
@@ -56,7 +58,6 @@ sub rm {
     delete $self->{_keys};
     return $self->_delete(undef, "/$id");
 }
-
 
 !!42;
 __END__
