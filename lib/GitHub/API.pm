@@ -25,11 +25,12 @@ We do not support unauthenticated access.
 sub new {
     my ($class, %opts) = @_;
 
-    $opts{user}  //= $ENV{GH_USER}  // `git config github.user`;
-    $opts{token} //= $ENV{GH_TOKEN} // `git config github.token`;
-    $opts{url}   //= q{};
-    $opts{base_url} ||= 'https://api.github.com';
-    $opts{ua}    ||= HTTP::Tiny->new(
+    $opts{user}        //= $ENV{GH_USER}  // `git config github.user`;
+    $opts{token_owner} //= $opts{user};
+    $opts{token}       //= $ENV{GH_TOKEN} // `git config github.token`;
+    $opts{url}         //= q{};
+    $opts{base_url}    //= 'https://api.github.com';
+    $opts{ua}          //= HTTP::Tiny->new(
         verify_ssl => 1,
         agent      => __PACKAGE__ . ' @ ',
         %{ $opts{ua_opts} // {} },
@@ -41,7 +42,7 @@ sub new {
         ### fetching: $opts{url}
         $opts{ua}->request(shift, $opts{url}, { headers => $opts{headers} }) };
 
-    return bless \%opts, $class;
+    return $opts{api} = bless \%opts, $class;
 }
 
 =method user
