@@ -8,23 +8,28 @@ use autobox::JSON 0.0004;
 # debugging...
 #use Smart::Comments '###';
 
-sub _get {
+sub _get_single {
     my $self = shift @_;
 
     ### fetching: $self->{base_url} . $self->{url}
-    my $items = $self
+    my $res = $self->{latest_response} = $self
         ->{ua}
         ->get(
             $self->{base_url} . $self->{url},
             { headers => $self->{headers} },
         )
-        ->{content}
-        ->decode_json
         ;
 
-    ### $items
-    return ref $items eq 'ARRAY' ? $items : [ $items ];
+    die "Oh, the shame! $res->{status}: $res->{reason}"
+        unless $res->{success};
+
+    my $item = $res->{content}->decode_json;
+
+    ### $item
+    return $item;
 }
+
+sub _get { my $x = shift->_get_single(@_); ref $x eq 'ARRAY' ? $x : [ $x ] }
 
 sub _post {
     my ($self, $content, $path_part) = @_;
