@@ -25,6 +25,9 @@ We do not support unauthenticated access.
 sub new {
     my ($class, %opts) = @_;
 
+    my $v = __PACKAGE__ . '/';
+    $v   .= $class->VERSION // 'devel';
+
     $opts{user}        //= $ENV{GH_USER}  // `git config github.user`;
     $opts{token_owner} //= $opts{user};
     $opts{token}       //= $ENV{GH_TOKEN} // `git config github.token`;
@@ -32,7 +35,7 @@ sub new {
     $opts{base_url}    //= 'https://api.github.com';
     $opts{ua}          //= HTTP::Tiny->new(
         verify_ssl => 1,
-        agent      => __PACKAGE__ . ' @ ',
+        agent      => "$v @ ",
         %{ $opts{ua_opts} // {} },
     );
 
