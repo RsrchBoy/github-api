@@ -1,7 +1,7 @@
 package GitHub::API::Base;
 
 use common::sense;
-use autobox::JSON;
+use autobox::JSON 0.0004;
 
 # ABSTRACT: Base class for GitHub::API classes
 
@@ -19,9 +19,10 @@ sub _get {
             { headers => $self->{headers} },
         )
         ->{content}
-        ->from_json
+        ->decode_json
         ;
 
+    ### $items
     return ref $items eq 'ARRAY' ? $items : [ $items ];
 }
 
