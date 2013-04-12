@@ -55,10 +55,8 @@ Returns a L<GitHub::API::Org> object representing the named organization.
 
 =cut
 
-sub user  { shift->_next(User, '/user') }
-#sub users { ... } # needs a Users class
-
-sub org { shift->_next(Org, "/orgs/$_[0]") }
+sub user { shift->_next(User, '/user', ($_[0] ? (user => @_) : @_) ) }
+sub org  { shift->_next(Org,  "/orgs/$_[0]", @_)                     }
 
 !!42;
 __END__
