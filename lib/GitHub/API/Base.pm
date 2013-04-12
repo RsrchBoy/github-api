@@ -77,3 +77,11 @@ sub _next {
 }
 
 !!42;
+__END__
+
+=head DESCRIPTION
+
+This is a base class providing common functionality to the C<GitHub::API::*>
+classes...  There are no user-servicable parts in here.
+
+=cut
