@@ -67,9 +67,9 @@ sub _next_append {
 }
 
 sub _next {
-    my ($self, $class, $url) = @_;
+    my ($self, $class, $url, %thing) = @_;
 
-    my %thing = %$self;
+    %thing = (%$self, %thing);
     $thing{url} = $url;
 
     #### %thing
