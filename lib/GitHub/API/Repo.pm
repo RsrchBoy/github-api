@@ -23,5 +23,19 @@ keys associated with this repository.
 sub hooks { shift->_next_append(Hooks, '/hooks') }
 sub keys  { shift->_next_append(Keys,  '/keys' ) }
 
+sub info { $_[0]->{repo_info} //= $_[0]->_get_single }
+
+sub is_fork   { !! $_[0]->info->{fork}     }
+sub has_forks { $_[0]->info->{forks_count} }
+
+sub forks {
+    my $self = shift @_;
+
+    return $self->{forks} if $self->{forks};
+
+    local $self->{url} = "$self->{url}/forks";
+    return $self->{forks} = $self->_get()
+}
+
 !!42;
 __END__
