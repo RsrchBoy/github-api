@@ -4,7 +4,7 @@ GitHub::API - An itty-bitty interface to the GitHub API
 
 # VERSION
 
-This document describes version 0.000000\_02 of GitHub::API - released March 29, 2013 as part of GitHub-API.
+This document describes version 0.000000\_03 of GitHub::API - released April 07, 2013 as part of GitHub-API.
 
 # SYNOPSIS
 
