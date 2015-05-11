@@ -1,10 +1,14 @@
+[![Build Status](https://travis-ci.org/RsrchBoy/github-api.svg?branch=master)](https://travis-ci.org/RsrchBoy/github-api)
+[![Kwalitee status](http://cpants.cpanauthors.org/dist/GitHub-API.png)](http://cpants.charsbar.org/dist/overview/GitHub-API)
+[![Coverage Status](https://coveralls.io/repos/RsrchBoy/github-api/badge.png?branch=master)](https://coveralls.io/r/RsrchBoy/github-api?branch=master)
+
 # NAME
 
 GitHub::API - An itty-bitty interface to the GitHub API
 
 # VERSION
 
-This document describes version 0.000000\_03 of GitHub::API - released April 07, 2013 as part of GitHub-API.
+This document describes version 0.000000\_04 of GitHub::API - released May 10, 2015 as part of GitHub-API.
 
 # SYNOPSIS
 
@@ -23,7 +27,7 @@ This document describes version 0.000000\_03 of GitHub::API - released April 07,
 
 # DESCRIPTION
 
-__WARNING: THIS IS INCOMPLETE AND WILL EAT YOUR REPOSITORIES!__
+**WARNING: THIS IS INCOMPLETE AND WILL EAT YOUR REPOSITORIES!**
 
 This is a very small interface to the GitHub v3 API, designed to do simple
 things quickly, and with a minimum of fuss.
@@ -37,23 +41,18 @@ We do not support unauthenticated access.
 
 ## user
 
-Returns a [GitHub::API::User](http://search.cpan.org/perldoc?GitHub::API::User) object representing the authenticated user.
+Returns a [GitHub::API::User](https://metacpan.org/pod/GitHub::API::User) object representing the authenticated user.
 
 ## org($org\_name)
 
-Returns a [GitHub::API::Org](http://search.cpan.org/perldoc?GitHub::API::Org) object representing the named organization.
+Returns a [GitHub::API::Org](https://metacpan.org/pod/GitHub::API::Org) object representing the named organization.
 
 # SEE ALSO
 
 Please see those modules/websites for more information related to this module.
 
-- [Net::GitHub](http://search.cpan.org/perldoc?Net::GitHub)
-- [Pithub](http://search.cpan.org/perldoc?Pithub)
-
-# SOURCE
-
-The development version is on github at [http://github.com/RsrchBoy/github-api](http://github.com/RsrchBoy/github-api)
-and may be cloned from [git://github.com/RsrchBoy/github-api.git](git://github.com/RsrchBoy/github-api.git)
+- [Net::GitHub](https://metacpan.org/pod/Net::GitHub)
+- [Pithub](https://metacpan.org/pod/Pithub)
 
 # BUGS
 
@@ -67,6 +66,23 @@ feature.
 # AUTHOR
 
 Chris Weyl <cweyl@alumni.drew.edu>
+
+## I'm a material boy in a material world
+
+<div>
+    <a href="https://gratipay.com/RsrchBoy/"><img src="http://img.shields.io/gratipay/RsrchBoy.svg" /></a>
+    <a href="http://bit.ly/rsrchboys-wishlist"><img src="http://wps.io/wp-content/uploads/2014/05/amazon_wishlist.resized.png" /></a>
+    <a href="https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fgithub-api&title=RsrchBoy's%20CPAN%20GitHub-API&tags=%22RsrchBoy's%20GitHub-API%20in%20the%20CPAN%22"><img src="http://api.flattr.com/button/flattr-badge-large.png" /></a>
+</div>
+
+Please note **I do not expect to be gittip'ed or flattr'ed for this work**,
+rather **it is simply a very pleasant surprise**. I largely create and release
+works like this because I need them or I find it enjoyable; however, don't let
+that stop you if you feel like it ;)
+
+[Flattr](https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fgithub-api&title=RsrchBoy&#x27;s%20CPAN%20GitHub-API&tags=%22RsrchBoy&#x27;s%20GitHub-API%20in%20the%20CPAN%22),
+[Gratipay](https://gratipay.com/RsrchBoy/), or indulge my
+[Amazon Wishlist](http://bit.ly/rsrchboys-wishlist)...  If and \*only\* if you so desire.
 
 # COPYRIGHT AND LICENSE
 
