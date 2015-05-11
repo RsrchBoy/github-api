@@ -7,6 +7,7 @@ use parent 'GitHub::API::Base';
 
 use aliased 'GitHub::API::Repo::Hooks';
 use aliased 'GitHub::API::Repo::Keys';
+use aliased 'GitHub::API::Repo::Releases';
 
 =method hooks
 
@@ -20,8 +21,9 @@ keys associated with this repository.
 
 =cut
 
-sub hooks { shift->_next_append(Hooks, '/hooks') }
-sub keys  { shift->_next_append(Keys,  '/keys' ) }
+sub hooks    { shift->_next_append(Hooks,     '/hooks'    ) }
+sub keys     { shift->_next_append(Keys,      '/keys'     ) }
+sub releases { shift->_next_append(Releases,  '/releases' ) }
 
 sub info { $_[0]->{repo_info} //= $_[0]->_get_single }
 
